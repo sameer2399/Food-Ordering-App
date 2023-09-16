@@ -2,6 +2,7 @@
   "name": "food-ordering-app",
   "version": "1.0.0",
   "description": "food ordering like swiggy",
+  
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
