@@ -28,7 +28,7 @@ if(resInfo.length === 0) {
 
 const { name, cuisines, costForTwoMessage } = resInfo?.cards?.[0]?.card.card.info;
 
-const { itemCards }  = resInfo?.cards[3].groupedCard.cardGroupMap.REGULAR.cards.splice(1, 5).find(item => item.card.card.title === "Recommended").card.card;
+const { itemCards }  = resInfo?.cards[3].groupedCard.cardGroupMap.REGULAR.cards.splice(1, 5).find(item => item.card.card.title === "Recommended" && item.card.card.title).card.card;
 
 
   return (
