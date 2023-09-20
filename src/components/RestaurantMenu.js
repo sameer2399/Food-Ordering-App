@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Shimmer from './Shimmer';
 import { useParams } from 'react-router-dom';
+import { MENU_API } from '../utils/constants';
 
 
 const RestaurantMenu = () => {
@@ -13,7 +14,7 @@ useEffect(() => {
 }, []);
 
 const fetchMenu = async () => {
-    const data = await fetch("https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0215821&lng=77.6604131&restaurantId="+ resId + "&submitAction=ENTER");
+    const data = await fetch(MENU_API+ resId);
     const json = await data.json();
 
     console.log(json);
@@ -25,9 +26,10 @@ if(resInfo.length === 0) {
     return <Shimmer />
 }
 
-const { name, cuisines, costForTwoMessage } = resInfo?.cards?.[0]?.card?.card?.info;
+const { name, cuisines, costForTwoMessage } = resInfo?.cards?.[0]?.card.card.info;
 
-const { itemCards } = resInfo?.cards?.[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+const { itemCards }  = resInfo?.cards[3].groupedCard.cardGroupMap.REGULAR.cards.splice(1, 5).find(item => item.card.card.title === "Recommended").card.card;
+
 
   return (
     <div className='menu'>
