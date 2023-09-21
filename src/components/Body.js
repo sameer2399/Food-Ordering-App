@@ -1,5 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utils/useOnlineStatus";
 // import { resList } from "../utils/mockData";
 import { Link } from "react-router-dom";
 
@@ -8,9 +9,9 @@ import { useState, useEffect } from "react";
 const Body = () => {
 
     //Local State Variable - superpowerfull
-    const [listOfRestaurants, setListOfRestaurants] = useState([]);
+    const [listOfRestaurants, setListOfRestaurants] = useState(null);
 
-    const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+    const [filteredRestaurants, setFilteredRestaurants] = useState(null);
 
     const [searchText, setSearchText] = useState("");
 
@@ -31,8 +32,18 @@ const Body = () => {
         console.log(json);
     };
 
+    const onlineStatus = useOnlineStatus();
+   
+    if (onlineStatus === false) {
+        return (
+            <div className="body">
+                <h1>Looks like you are offline !! Please check your internet connection</h1>
+            </div>
+        );
+    }
 
-    return listOfRestaurants.length === 0 ? <Shimmer /> : (
+
+    return !listOfRestaurants ? <Shimmer /> : (
         <div className="body">
             <div className="filter">
                 <div className="Search">
