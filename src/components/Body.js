@@ -23,8 +23,8 @@ const Body = () => {
         const data = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=13.0215821&lng=77.6604131");
         const json = await data.json();
          
-                setListOfRestaurants(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
-                setFilteredRestaurants(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+                setListOfRestaurants(json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+                setFilteredRestaurants(json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
             
         
         // setListOfRestaurants(resList);
@@ -45,22 +45,22 @@ const Body = () => {
 
     return !listOfRestaurants ? <Shimmer /> : (
         <div className="body">
-            <div className="filter">
-                <div className="Search">
-                    <input type="text" className="search-box" name="" id="" value={searchText} onChange={(e) => {
-                        //update the search text
+            <div className="flex">
+                <div className="Search m-4 p-4">
+                    <input type="text" className="border border-solid border-black" name="" id="" value={searchText} onChange={(e) => {
                         setSearchText(e.target.value);
                     }}/>
-                    <button onClick ={() => {
-                        //filter the restaurant card and update the UI
-                        //search
+                    <button className="px-4 py-1 bg-green-100 m-4 rounded-lg" 
+                    onClick ={() => {
                         const searchedRestaurant = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
 
                         setFilteredRestaurants(searchedRestaurant);
                     }}>Search</button>
                 </div>
-               <button 
-                className="filter-btn" 
+
+                <div className="filter m-4 p-4 flex items-center">
+                <button 
+                className="px-4 py-2 bg-gray-100 rounded-lg" 
                 onClick={() => {
                     //filter logic here
                     const filteredList = listOfRestaurants.filter(
@@ -70,8 +70,11 @@ const Body = () => {
                     }}>
                     Top Rated Restaurants
                </button>
+                </div>
+               
             </div>
-            <div className="res-container">
+
+            <div className="flex flex-wrap">
                 {filteredRestaurants?.map((restaurant) => (
                         <Link key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}><RestaurantCard resData={restaurant} /></Link>
                 ))}      
