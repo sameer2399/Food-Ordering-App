@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
 // import { resList } from "../utils/mockData";
@@ -15,6 +15,11 @@ const Body = () => {
 
     const [searchText, setSearchText] = useState("");
 
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
+
+    console.log(listOfRestaurants);
+
     useEffect(() => {
         fetchData();
     }, []);
@@ -23,8 +28,8 @@ const Body = () => {
         const data = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=13.0215821&lng=77.6604131");
         const json = await data.json();
          
-                setListOfRestaurants(json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
-                setFilteredRestaurants(json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+                setListOfRestaurants(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+                setFilteredRestaurants(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
             
         
         // setListOfRestaurants(resList);
@@ -76,7 +81,16 @@ const Body = () => {
 
             <div className="flex flex-wrap">
                 {filteredRestaurants?.map((restaurant) => (
-                        <Link key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}><RestaurantCard resData={restaurant} /></Link>
+                        <Link 
+                            key={restaurant.info.id} 
+                            to={"/restaurants/"+restaurant.info.id}>
+                               { restaurant.info.promoted ? (
+                                    <RestaurantCardPromoted resData={restaurant} /> ) : (
+                                <RestaurantCard resData={restaurant} />
+                                )}
+                        
+                        
+                        </Link>
                 ))}      
             </div>
         </div>
