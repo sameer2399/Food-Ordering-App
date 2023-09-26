@@ -36,3 +36,13 @@
         - Two imp hooks
                 - useState() - used to generate superpowerfull state variables in react
                 - useEffect() - 
+
+
+
+# Redux toolkit
+        - Install @reduxjs/toolkit and react-redux
+        - Build our store
+        - connect our store to our app
+        - slice (cartSlice)
+        - dispatch(action)
+        - selector

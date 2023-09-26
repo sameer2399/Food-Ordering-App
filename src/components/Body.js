@@ -4,7 +4,8 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 // import { resList } from "../utils/mockData";
 import { Link } from "react-router-dom";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
 
@@ -18,6 +19,7 @@ const Body = () => {
     const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
 
+    const {loggedInUser, setUserName} = useContext(UserContext)
     console.log(listOfRestaurants);
 
     useEffect(() => {
@@ -77,6 +79,12 @@ const Body = () => {
                </button>
                 </div>
                
+                <div className="m-6 p-4">
+                    <label>User Name: </label>
+                    <input className="p-2 border-black" type="text" value={loggedInUser} onChange={(e) => {
+                        setUserName(e.target.value);
+                    }}/>
+                </div>
             </div>
 
             <div className="flex flex-wrap">
