@@ -1,0 +1,138 @@
+{
+    "info": {
+        "id": "604805",
+        "name": "Keventers - Milkshakes & Desserts",
+        "cloudinaryImageId": "f0e94c984813053f46c214f18ce73d59",
+        "locality": "Dodda Banaswadi",
+        "areaName": "Kalyan Nagar",
+        "costForTwo": "₹200 for two",
+        "cuisines": [
+            "Beverages",
+            "Ice Cream",
+            "Desserts",
+            "Healthy Food"
+        ],
+        "avgRating": 4.1,
+        "veg": true,
+        "feeDetails": {
+            "restaurantId": "604805",
+            "fees": [
+                {
+                    "name": "BASE_DISTANCE",
+                    "fee": 3800
+                },
+                {
+                    "name": "BASE_TIME"
+                },
+                {
+                    "name": "ANCILLARY_SURGE_FEE"
+                }
+            ],
+            "totalFee": 3800
+        },
+        "parentId": "268997",
+        "avgRatingString": "4.1",
+        "totalRatingsString": "500+",
+        "promoted": true,
+        "adTrackingId": "cid=8038214~p=1~eid=0000018a-e23d-c52a-61ab-1a3f00500102~srvts=1696012813610~63141",
+        "sla": {
+            "deliveryTime": 28,
+            "lastMileTravel": 1.9,
+            "serviceability": "SERVICEABLE",
+            "slaString": "28 mins",
+            "lastMileTravelString": "1.9 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2023-09-30 03:00:00",
+            "opened": true
+        },
+        "badges": {
+            "imageBadges": [
+                {
+                    "imageId": "v1695133679/badges/Pure_Veg111.png",
+                    "description": "pureveg"
+                }
+            ],
+            "textExtendedBadges": [
+                {
+                    "iconId": "guiltfree/GF_Logo_android_3x",
+                    "shortDescription": "options available",
+                    "fontColor": "#7E808C"
+                }
+            ]
+        },
+        "isOpen": true,
+        "aggregatedDiscountInfoV2": {
+            "header": "40% OFF",
+            "shortDescriptionList": [
+                {
+                    "meta": "Use SPECIALS",
+                    "discountType": "Percentage",
+                    "operationType": "RESTAURANT"
+                }
+            ],
+            "descriptionList": [
+                {
+                    "meta": "40% off up to ₹80 on select items | Use code SPECIALS",
+                    "discountType": "Percentage",
+                    "operationType": "RESTAURANT"
+                }
+            ]
+        },
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "pureveg",
+                                "imageId": "v1695133679/badges/Pure_Veg111.png"
+                            }
+                        }
+                    ]
+                },
+                "textBased": {},
+                "textExtendedBadges": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "",
+                                "fontColor": "#7E808C",
+                                "iconId": "guiltfree/GF_Logo_android_3x",
+                                "shortDescription": "options available"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "orderabilityCommunication": {
+            "title": {},
+            "subTitle": {},
+            "message": {},
+            "customIcon": {}
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {}
+    },
+    "analytics": {
+        "context": "seo-data-102c08cb-88a9-41cd-bcf2-a1d2c4d227df"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/restaurants/keventers-milkshakes-and-desserts-dodda-banaswadi-kalyan-nagar-bangalore-604805",
+        "text": "RESTAURANT_MENU",
+        "type": "WEBLINK"
+    },
+    "widgetId": "collectionV5RestaurantListWidget_byName"
+}

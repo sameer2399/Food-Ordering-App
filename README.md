@@ -46,3 +46,15 @@
         - slice (cartSlice)
         - dispatch(action)
         - selector
+
+# setting up testing
+        - install react testing library
+        - install jest
+        - install babel dependencies for jest
+        - configure babel.config.js
+        - configure .parcelrc file to disable default babel transpilation
+        - jest configuration : npx jest --init
+        - install jsdom library
+        - install @babel/present-react
+        - install @testing-library/jest-dom
+
